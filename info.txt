@@ -1,0 +1,92 @@
+para iniciar o projeto:
+    yarn init -y
+
+
+ instalar express
+    yarn add express
+
+typescript como dependencia de desenvolvimento:
+    yarn add typescript -D
+
+Para gerera o arquivo tsconfig
+    yarn tsc --init
+
+
+criar pasta src na raiz
+    depois criar na pasta arquivo:   server.ts
+
+
+no arquivo teconfig.json   descomentar e alterar as linhas abaixo:
+    "outDir": "./dist",
+    "rootDir": "./src",
+
+executar o comando:
+    yarn tsc
+
+
+Quando surgir algum problema com lib é indicado instalar o component sugeirido no problema
+    ex: yarn add @types/express -D
+    obs: instalar como dependencia de desenvolvimento
+
+
+Após a configuração do arquivo server.ts
+    executar o:  yarn tsc
+
+
+Deletar a pasta dist
+    executar:  yarn add ts-node-dev -D
+
+
+Adicionar o script abaixo no packge.json
+    "scripts": {
+        "build": "tsc",
+        "dev:server": "ts-node-dev src/server.ts"
+  },
+
+
+
+agora para rodar o projeto:
+    yarn dev:server
+
+
+adicionar o transpile no srcipt , o transpile faz com que o node pule a verificação de erros
+o processo fica bem mais rápido e perfomatico
+    "scripts": {
+        "build": "tsc",
+        "dev:server": "ts-node-dev --transpileOnly src/server.ts"
+  },
+
+adicionar o comando ignore node-modules para evitar que o typescripts fique compilando arquivos
+da pasta node modules
+     "scripts": {
+        "build": "tsc",
+        "dev:server": "ts-node-dev --transpile-only --ignore node_modules src/server.ts"
+  },
+
+
+  fazer as configurações de debug que estão no arquivo infoDebugger.txt
+
+
+configurar o ambiente de desenvolvimento no insominia
+    criar novo workspace
+    configurar variavel:
+        manage enviroments / new enviroments/ renomeia , cria a variavel
+
+
+instalar o uuid
+    yarn add @types/uuid
+
+
+no insominia é possivel abrir algumas opçoes na isnerção do json apertando
+    Ctrl+ space    entre as aspas duplas em que vc quer definir algo
+
+
+instalar o date-fns
+    yarn add date-fns
+
+
+as vezes é necessário utiliza o reload window para desfazer alguns bugs
+    Ctrl + Shift + P
+    reload window
+
+
