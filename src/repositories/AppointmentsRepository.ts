@@ -11,12 +11,15 @@ interface CreateAppointmentDTO {
 
 class AppointmentsRepository {
     // criando uma variavel que não é acessivel por fora da classe
+    // e definindo a tipagem
     private appointments: Appointment[];
 
+    // inicializando o tipo a variavel
     constructor() {
         this.appointments = [];
     }
 
+    // retorna o valor de appointments
     public all(): Appointment[] {
         return this.appointments;
     }
@@ -24,21 +27,27 @@ class AppointmentsRepository {
     public findByDate(date: Date): Appointment | null {
         // verificando agendamentos na mesma data
         // realiza uma busca em apointments e retorna o item em que
-        // a data seja igual a data que esta vindo no parse date
+        // a data seja igual a data que esta vindo no date
         const findAppointment = this.appointments.find(appointment =>
             isEqual(date, appointment.date),
         );
         // verifica se a sentença abaixo atende à condição, uma especie de if
+        // se findAppointment existir retorna ele mesmo
+        // se não retorna um null
         return findAppointment || null;
     }
 
     // provider: string, date: Date
-
+    // recebe dois parâmetros
+    // desestruturando e definindo a tipagem CreateApponintmentDTO
     public create({ provider, date }: CreateAppointmentDTO): Appointment {
-        const appointment = new Appointment(provider, date);
+        // aramazenando o valor de um new Appointment que receberá os parâmaetros acima como valor
+        const appointment = new Appointment({ provider, date });
 
+        // dando um push em appointments com o valor de appointment
         this.appointments.push(appointment);
 
+        // retornando o valor de appointment
         return appointment;
     }
 }

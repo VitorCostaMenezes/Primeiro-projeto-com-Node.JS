@@ -23,3 +23,10 @@ clica em run debug
 }
 
 
+
+Para identificar o erro você pode direcionar a o icone vermelho lateral em cima do local aonde vc quer debugar e executar o codigo.
+
+
+vc pode verificar as variaveis em tempo real pela opção watch
+
+
