@@ -6,7 +6,7 @@ import Appointment from '../models/Appointment';
 // importando o repositorio
 import AppointmentsRepository from '../repositories/AppointmentsRepository';
 
-// criando uma interface
+// criando uma interface dos elementos que virão como parâmetro no execute
 interface Request {
     date: Date;
     provider: string;
@@ -18,7 +18,7 @@ class CreateAppointmentService {
     private appointmentsRepository: AppointmentsRepository;
 
     // Criando um contructor/
-    // Recebe um parâmetro do tipo Appointmenterepository
+    // Recebe um parâmetro do tipo AppointmenteRepository
     // reecebendo o valor do repositorio appointmens do arquivo AppointmentsRepository.ts
     //  como parâmaetro
     // isso é chamado de Dependency Inversion
@@ -49,7 +49,7 @@ class CreateAppointmentService {
             throw Error('This appointment is already booked');
         }
 
-        // armazena em appointment o valor criado através do meotod create
+        // armazena em appointment o valor criado através do meotodo create
         const appointment = this.appointmentsRepository.create({
             provider,
             date: appointmentDate,

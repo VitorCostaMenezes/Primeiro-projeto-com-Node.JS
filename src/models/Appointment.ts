@@ -7,6 +7,8 @@ class Appointment {
 
     date: Date;
 
+    // o constructor serve para receber os parâmetros quando for chamadoe  aplicar um regra
+    // ex: new appointment(parametro1, parametro2)
     // paraâmetros recebidos na instancia da classe
     // constructor(provider: string, date: Date) {
 
@@ -18,4 +20,5 @@ class Appointment {
     }
 }
 
+// retorna o objeto definido acima
 export default Appointment;
